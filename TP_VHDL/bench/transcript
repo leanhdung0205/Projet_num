@@ -1,0 +1,36 @@
+# //  ModelSim SE-64 10.2c Jul 18 2013 Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vsim lib_COMP.test_alu
+# vsim lib_COMP.test_alu 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.test_alu(test1)#1
+# Loading work.alu(a)#1
+add wave -position insertpoint  \
+sim:/test_alu/sig_A
+# ** Warning: (vsim-WLF-5022) WLF summary optimizations disabled.  This will adversely affect wave draw performance.
+add wave -position insertpoint  \
+sim:/test_alu/sig_B
+add wave -position insertpoint  \
+sim:/test_alu/sig_S
+add wave -position insertpoint  \
+sim:/test_alu/ALU1/result
+add wave -position insertpoint  \
+sim:/test_alu/ALU1/a_u
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /test_alu/ALU1
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 3  Instance: /test_alu/ALU1
+# ** Failure:  FIN DE LA SIMULATION
+#    Time: 50 ns  Iteration: 0  Process: /test_alu/line__38 File: test_ALU_assert.vhd
+# Break in Process line__38 at test_ALU_assert.vhd line 80
